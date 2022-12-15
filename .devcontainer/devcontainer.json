@@ -1,0 +1,24 @@
+{
+    "name": "Django",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "VARIANT": "3-buster"
+        }
+    },
+    "extensions": [
+        "EditorConfig.EditorConfig",
+        "ms-python.black-formatter",
+        "ms-python.flake8"
+    ],
+    "portsAttributes": {
+        "8000": {
+            "label": "Django Server",
+            "onAutoForward": "notify"
+        }
+    },
+    "postCreateCommand": ".devcontainer/postCreate.sh",
+    "postAttachCommand": ".devcontainer/postAttach.sh",
+    "remoteUser": "vscode"
+}
